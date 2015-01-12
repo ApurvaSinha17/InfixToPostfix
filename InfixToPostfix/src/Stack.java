@@ -41,8 +41,8 @@ public class Stack {
 		return str;
 	}
 	
-	public static int getTop(){
+	public static Boolean isEmpty(){
 		
-		return top;
+		return top == -1;
 	}
 }

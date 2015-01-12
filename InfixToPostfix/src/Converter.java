@@ -19,7 +19,7 @@ public class Converter {
 			else
 				conversion(str,precedence);
 		}
-		while(Stack.getTop() >= 0){
+		while(!Stack.isEmpty()){
 			postfixExpr.add(Stack.pop());
 		}
 		
@@ -32,7 +32,7 @@ public class Converter {
 	
 	private static void conversion(String str, int precedence){
 		
-		if(Stack.getTop() == -1)
+		if(Stack.isEmpty())
 			Stack.push(str);
 		else if(str.equals(")")){
 			
@@ -44,7 +44,7 @@ public class Converter {
 			Stack.pop();
 		}							
 		else{
-			while( (Stack.getTop() >= 0) && (!Stack.peek().equals("(")) && (getPrecendence(Stack.peek()) >= precedence) ){
+			while( (!Stack.isEmpty()) && (!Stack.peek().equals("(")) && (getPrecendence(Stack.peek()) >= precedence) ){
 				String token = Stack.pop();
 				postfixExpr.add(token);
 			}
