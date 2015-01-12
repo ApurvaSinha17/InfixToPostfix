@@ -21,6 +21,8 @@ public class MainClass {
 		for(String str : postfixExpr){
 			System.out.print(str+" ");
 		}
+		
+		scanner.close();
 	}
 
 }
